@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Salary Prediction</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      animation: fadeInDown 1.5s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    label, input, select {
+      display: block;
+      margin: 10px 0;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    input, select {
+      background: #ecf0f1;
+      color: #2c3e50;
+    }
+
+    button {
+      background-color: #16a085;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1abc9c;
+    }
+
+    .prediction-result {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #3498db;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      display: none;
+      margin: 10px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Employee Salary Prediction</h1>
+
+  <div class="container">
+    <form method="POST" action="/" onsubmit="showLoader()">
+      <label for="company">Company:</label>
+      <select id="company" name="company" required>
+        <option value="">Select Company</option>
+        <option value="Google">Google</option>
+        <option value="Microsoft">Microsoft</option>
+        <option value="Facebook">Facebook</option>
+        <option value="Amazon">Amazon</option>
+        <option value="Netflix">Netflix</option>
+        <option value="Apple">Apple</option>
+      </select>
+
+      <label for="job">Job Title:</label>
+      <select id="job" name="job" required>
+        <option value="">Select Job</option>
+        <option value="Data Scientist">Data Scientist</option>
+        <option value="Software Engineer">Software Engineer</option>
+        <option value="Web Developer">Web Developer</option>
+        <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+        <option value="Data Analyst">Data Analyst</option>
+      </select>
+
+      <label for="degree">Degree:</label>
+      <select id="degree" name="degree" required>
+        <option value="">Select Degree</option>
+        <option value="Bachelors">Bachelors</option>
+        <option value="Masters">Masters</option>
+        <option value="PhD">PhD</option>
+      </select>
+
+      <label for="experience">Experience (in years):</label>
+      <input type="number" id="experience" name="experience" min="0" required />
+
+      <div class="loader" id="loader"></div>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <div class="prediction-result">
+        <h3>Predicted Salary: ₹ {{ prediction }}</h3>
+      </div>
+    {% endif %}
+  </div>
+
+  <script>
+    function showLoader() {
+      document.getElementById('loader').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
