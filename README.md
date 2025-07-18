@@ -1,6 +1,8 @@
  🧠 Employee Salary Prediction Web App
 
 This is a simple web application that predicts an employee's salary based on input features like experience, role, education, and location using a machine learning model.
+![Home Page](https://github.com/vasavi297/Employee-salary-prediction-Vasavi/blob/6008c9ddf1ecafba8786f622377532e3dc38bc6e/webpage.png)
+![result](
 
  📌 Features
 
