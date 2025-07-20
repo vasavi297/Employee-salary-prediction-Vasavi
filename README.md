@@ -9,7 +9,6 @@ This is a web-based application that predicts an employee's salary based on sele
 - 🎯 Salary prediction based on company, job, degree, and experience.
 - 🤖 Machine Learning using Linear Regression.
 - 💡 Clean UI with animated web background.
-- 🌙🌞 Dark and Light mode with toggle icons.
 - 📊 Chart.js integration to visualize average salaries by job role.
 
 
@@ -30,7 +29,7 @@ This is a web-based application that predicts an employee's salary based on sele
 - Backend: Python, Flask
 - ML: Pandas, NumPy, scikit-learn
 - Visualization: Chart.js
-- UI/UX: Web animation, Light/Dark mode
+- UI/UX: Web animation
 
 
 
