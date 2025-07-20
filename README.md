@@ -39,6 +39,6 @@ This is a web-based application that predicts an employee's salary based on sele
 2. Flask receives the input and feeds it to a trained model (`model.pkl`).
 3. The predicted salary is shown along with a dynamic bar chart.
 
-
+✅ Deployed Link:🔗https://employee-salary-prediction-vasavi-9.onrender.com
 
 
