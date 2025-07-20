@@ -17,12 +17,11 @@ This is a web-based application that predicts an employee's salary based on sele
 📸 Screenshots
 
 
-### 🔮 Prediction Result
+🏠 Home Page with Animation
+![Home Page](https://github.com/vasavi297/Employee-salary-prediction-Vasavi/blob/b8b2a3e4cbc9d5bba67f6fafab50fe4c9fa4ce79/homepage.png)
+
+🔮 Prediction Result
 ![Result Page]()
-
-### 🏠 Home Page with Animation
-![Home Page]()
-
 
 
 🛠 Tech Stack
