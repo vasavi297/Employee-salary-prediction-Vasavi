@@ -74,6 +74,9 @@ def result():
                            salary=None,
                            jobs=list(average_salaries.keys()),
                            values=list(average_salaries.values()))
+import os
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
+
